@@ -1,0 +1,684 @@
+/* Complete styles.css for Block Breaker Landing Page */
+
+:root {
+    --primary: #4A7BF7;
+    --primary-dark: #3C66CC;
+    --secondary: #FF5D8F;
+    --dark: #1A1A2E;
+    --light: #F6F8FF;
+    --gray: #818999;
+    --gradient: linear-gradient(135deg, var(--primary) 0%, #6C63FF 100%);
+    --android-gradient: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    --ios-color: #007AFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--gradient);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.4rem;
+    background: white;
+    color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 5% 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.mockup {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+    animation: float 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0.03;
+    border-radius: 0 0 0 40%;
+    z-index: 0;
+}
+
+.download-section {
+    padding: 6rem 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.download-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.download-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.platform-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.download-card:first-child .platform-icon {
+    color: #4CAF50;
+}
+
+.download-card:last-child .platform-icon {
+    color: var(--ios-color);
+}
+
+.platform-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.platform-desc {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease, transform 0.2s ease;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 8px 20px rgba(74, 123, 247, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 12px 25px rgba(74, 123, 247, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.download-card .btn {
+    width: 100%;
+    max-width: 220px;
+    justify-content: center;
+}
+
+.download-card:first-child .btn-primary {
+    background: var(--android-gradient);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.download-card:first-child .btn-primary:hover {
+    box-shadow: 0 12px 25px rgba(76, 175, 80, 0.4);
+}
+
+.download-card:last-child .btn-outline {
+    border: 2px solid var(--ios-color);
+    color: var(--ios-color);
+}
+
+.download-card:last-child .btn-outline:hover {
+    background: var(--ios-color);
+    color: white;
+}
+
+.download-card .btn:active {
+    transform: scale(0.97);
+}
+
+.download-note {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 0.8rem;
+    font-style: italic;
+}
+
+.features {
+    padding: 6rem 5%;
+    background-color: var(--light);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--gradient);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.feature-desc {
+    font-size: 0.95rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.reviews {
+    padding: 6rem 5%;
+    background-color: white;
+}
+
+.reviews-slider {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.reviews-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.review-card {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
+    background: var(--light);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: var(--dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.author-title {
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+.cta {
+    padding: 6rem 5%;
+    text-align: center;
+    background: var(--gradient);
+    color: white;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn-light {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+footer {
+    padding: 4rem 5% 2rem;
+    background-color: var(--dark);
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo-icon {
+    font-size: 1.2rem;
+    background: white;
+    color: var(--primary);
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 6rem;
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .mockup {
+        max-width: 80%;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--primary-dark);
+        flex-direction: column;
+        padding: 2rem;
+        transition: 0.5s;
+        z-index: 1000;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .download-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-card {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .download-options {
+        gap: 1.5rem;
+    }
+
+    .mockup {
+        max-width: 90%;
+    }
+    
+    .feature-card, .review-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .reviews-slider {
+        gap: 1rem;
+    }
+    
+    .review-card {
+        flex: 0 0 85%;
+    }
+}
